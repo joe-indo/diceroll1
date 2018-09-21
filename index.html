@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice 2</title>
+<script type="text/javascript">
+	function diceRoll() {
+		document.getElementById("button").disabled = true;
+		var d1 = 0;
+		var d2 = 0;
+		var total = 0;
+		var static = 10;
+
+		d1 = Math.floor(Math.random()*6)+1;
+		d2 = Math.floor(Math.random()*6)+1;
+
+		if (d1 == 1) {
+			document.getElementById('myImage').src='dice1.svg';
+		} else if (d1 == 2) {
+			document.getElementById('myImage').src='dice2.svg';
+		} else if (d1 == 3) {
+			document.getElementById('myImage').src='dice3.png';
+		} else if (d1 == 4) {
+			document.getElementById('myImage').src='dice4.png';
+		} else if (d1 == 5) {
+			document.getElementById('myImage').src='dice5.png';
+		} else {
+			document.getElementById('myImage').src='dice6.png';
+		}
+
+		if (d2 == 1) {
+			document.getElementById('myImage2').src='dice1.svg';
+		} else if (d2 == 2) {
+			document.getElementById('myImage2').src='dice2.svg';
+		} else if (d2 == 3) {
+			document.getElementById('myImage2').src='dice3.png';
+		} else if (d2 == 4) {
+			document.getElementById('myImage2').src='dice4.png';
+		} else if (d2 == 5) {
+			document.getElementById('myImage2').src='dice5.png';
+		} else {
+			document.getElementById('myImage2').src='dice6.png';
+		}
+
+		total = d1 + d2;
+
+		if (total == 2) {
+			document.getElementById('myImage3').src='2.png';
+			window.open("https://en.wikipedia.org/wiki/Snake")
+		} else if (total == 3) {
+			document.getElementById('myImage3').src='3.png';
+		} else if (total == 4) {
+			document.getElementById('myImage3').src='4.png';
+		} else if (total == 5) {
+			document.getElementById('myImage3').src='5.png';
+		} else if (total == 6) {
+			document.getElementById('myImage3').src='6.png';
+		} else if (total == 7) {
+			document.getElementById('myImage3').src='7.png';
+			window.open("https://www.7-eleven.com/")
+		} else if (total == 8) {
+			document.getElementById('myImage3').src='8.png';
+		} else if (total == 9) {
+			document.getElementById('myImage3').src='9.png';
+		} else if (total == 10) {
+			document.getElementById('myImage3').src='10.png';
+		} else if (total == 11) {
+			document.getElementById('myImage3').src='11.png';
+			window.open("https://www.7-eleven.com/")
+		} else {
+			document.getElementById('myImage3').src='12.png';
+		}
+
+		setTimeout(function() {
+    		document.getElementById('myImage').src='dicerolled.gif';
+    		document.getElementById('myImage2').src='dicerolled.gif';
+    		document.getElementById('myImage3').src='';
+    		document.getElementById("button").disabled = false;
+		}, 3000);
+	}
+</script>
+</head>
+<body> 
+<img id="myImage" src="dicerolled.gif" style="width:100px">
+<img id="myImage12" src="plus.png" style="width:100px">
+<img id="myImage2" src="dicerolled.gif" style="width:100px">
+<img id="myImage14" src="equal.png" style="width:100px">
+<img id="myImage3" src="" style="width:100px">
+<button id="button" onclick="diceRoll()">Roll!</button>
+</body>
+</html>
